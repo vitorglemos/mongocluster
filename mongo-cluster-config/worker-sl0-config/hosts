@@ -1,8 +1,8 @@
 127.0.0.1	localhost
-127.0.1.1	worker-sl2.myguest.virtualbox.org	router
+127.0.1.1	worker-sl2.myguest.virtualbox.org	config-server
 
 192.168.56.101 router
-192.168.56.102 config-server
+192.168.56.102 config-server 
 192.168.56.103 worker-sl1
 192.168.56.104 worker-sl2
 
