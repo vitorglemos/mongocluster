@@ -14,11 +14,37 @@ Para facilitar os testes, foram disponibilizados todos os arquivos de configura�
 
 ## Passo 3 - Importando a Base de Dados para o Mongo
 
-O arquivo da collection no Mongo foi exportado e inserido neste Drive (já que o Github limita o envio de arquivos maiores do que 25MB). Essa é uam versão resumida da base de dados, contendo um total de 1761 ISRCS para busca. Para import, é possivel utilizar o comando abaixo numa máquina primary node do MongoDB:
+O arquivo da collection no Mongo foi exportado e inserido neste Drive (já que o Github limita o envio de arquivos maiores do que 25MB):
+
+https://drive.google.com/file/d/1qH9cG0p04gfxtCo3vbphsFdzTzQaPA9h/view?usp=sharing
+
+Essa é uma versão resumida da base de dados, contendo um total de 1761 ISRCS para busca. Para import, é possivel utilizar o comando abaixo numa máquina primary node do MongoDB:
 ```shell
 mongoimport --host 127.0.0.1 --port 27017 --username admin --password admin --authenticationDatabase admin -db spotify --collection Spotifyv2 --file mongoSpotify.json
 ```
+## Passo 3 - Scripts em Paralelo
+Os scripts utilizados para alocar as máquinas em paralelo (via ssh) e executar as consultas em fragmento podem ser encontradas no link abaixo:
+- **Para a máquina master** (Que aloca as máquinas): https://github.com/vitorglemos/mongocluster/blob/main/primary-node/parallel_mongo.py
+  ```python
+  python3 parallel_mongo.py 
+  ```
+Caso seja necessário trocar o nome dos nós ou realizar apenas o teste em um deles, é possível modifica-los no trecho :
+ ```python
+hostnames = ['config-server', 'worker-sl1', 'worker-sl2']
+```
+Neste array, é necessário colocar o nome das máquinas (hosts) para que o acesso via ssh seja feito. 
 
+**Para as máquinas workers**, o script utilizado se encontra neste link: https://github.com/vitorglemos/mongocluster/tree/main/secondary-node
+
+Caso não tenha uma credencial no Spotify para testar e enviar requests, é possivel substituir este comando no **parallel_mongo.py** do master:
+- No lugar de:
+ ```python
+ command = f'python3 /home/your_user/script/request.py --inicio {inicio} --fim {fim} --genre 1'
+ ```
+- Use:
+ ```python
+ command = f'python3 /home/your_user/script/request.py --inicio {inicio} --fim {fim} --genre 0'
+ ```
 ## Passo 4 - Resultado das Consultas
 
 O resultado das consultas também pode ser conferido nesta pasta do Github: https://github.com/vitorglemos/mongocluster/tree/main/query-results
