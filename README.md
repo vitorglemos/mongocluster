@@ -3,6 +3,9 @@
 
 Para obter os dados de ISRC e característica das músicas (track_name), foi realizado um script que se conecta a API do Spotify. Para facilitar o processo de testes, o arquivo de DB do Mongo foi adicionado ao drive: https://drive.google.com/file/d/1qH9cG0p04gfxtCo3vbphsFdzTzQaPA9h/view?usp=sharing
 
+Todos os arquivos (scripts) utilizados para baixar os dados para realizar a demonstração no Mongo, é possível encontrar em: 
+https://github.com/vitorglemos/mongocluster/tree/main/isrc-csv
+
 ## Passo 2 - Instalação do Ambiente Ubuntu
 
 Para a criação das máquinas, foi utilizado o Virtual Box com 4 máquinas virtuais utilizando o Ubuntu. 
