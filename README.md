@@ -57,3 +57,5 @@ Esta pasta contém separadamente o que cada consulta retornou.
 - full-q-worker-sl0.json: retorno do worker-sl0 para a consulta sem filtro (retornar todos os dados)
 - full-q-worker-sl1.json: retorno do worker-sl1 para a consulta sem filtro (retornar todos os dados)
 - full-q-worker-sl2.json: retorno do worker-sl2 para a consulta sem filtro (retornar todos os dados)
+
+É possível também ter um resumo dos dados retornados (filtrados por ISRCS) utilizados na apresentação: https://github.com/vitorglemos/mongocluster/blob/main/TABELA_EXCEL_55ISRCS.xlsx
