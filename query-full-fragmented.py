@@ -60,10 +60,10 @@ def get_query(start_index, end_index):
       }
    },
    {
-      "$skip":"start_index"
+      "$skip": start_index
    },
    {
-      "$limit":"end_index - start_index"
+      "$limit": end_index - start_index
    }
 ]
 
