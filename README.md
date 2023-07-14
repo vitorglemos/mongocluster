@@ -12,6 +12,10 @@ a instalação do Mongo no ambiente de testes.
 Além disso, é necessário configurar os arquivos de /etc/mongod.conf, /etc/hostname e /etc/host para que cada máquina consiga se reconhecer na rede.
 Para facilitar os testes, foram disponibilizados todos os arquivos de configuração utilizados em cada máquina: https://github.com/vitorglemos/mongocluster/tree/main/mongo-cluster-config
 
+Os dados referentes as máquinas em replicação do Mongo podem ser conferidas no arquivo de rs_status:
+
+https://github.com/vitorglemos/mongocluster/blob/main/rs_status
+
 ## Passo 3 - Importando a Base de Dados para o Mongo
 
 O arquivo da collection no Mongo foi exportado e inserido no Drive mencionado acima no Passo 1 (já que o Github limita o envio de arquivos maiores do que 25MB):
