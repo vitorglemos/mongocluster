@@ -1,7 +1,7 @@
 # Trabalho - Gerência de Grandes Volumes de Dados
 ## Passo 1 - Obteção dos Dados
 
-Para obter os dados de ISRC e característica das músicas (track_name), foi realizado um script que se conecta a API do Spotify. Para facilitar o processo de testes, o arquivo de DB do Mongo foi adicionado ao drive: 
+Para obter os dados de ISRC e característica das músicas (track_name), foi realizado um script que se conecta a API do Spotify. Para facilitar o processo de testes, o arquivo de DB do Mongo foi adicionado ao drive: https://drive.google.com/file/d/1qH9cG0p04gfxtCo3vbphsFdzTzQaPA9h/view?usp=sharing
 
 ## Passo 2 - Instalação do Ambiente Ubuntu
 
@@ -14,13 +14,11 @@ Para facilitar os testes, foram disponibilizados todos os arquivos de configura�
 
 ## Passo 3 - Importando a Base de Dados para o Mongo
 
-O arquivo da collection no Mongo foi exportado e inserido neste Drive (já que o Github limita o envio de arquivos maiores do que 25MB):
-
-https://drive.google.com/file/d/1qH9cG0p04gfxtCo3vbphsFdzTzQaPA9h/view?usp=sharing
+O arquivo da collection no Mongo foi exportado e inserido no Drive mencionado acima no Passo 1 (já que o Github limita o envio de arquivos maiores do que 25MB):
 
 Essa é uma versão resumida da base de dados, contendo um total de 1761 ISRCS para busca. Para import, é possivel utilizar o comando abaixo numa máquina primary node do MongoDB:
 ```shell
-mongoimport --host 127.0.0.1 --port 27017 --username admin --password admin --authenticationDatabase admin -db spotify --collection Spotifyv2 --file mongoSpotify.json
+mongoimport --host 127.0.0.1 --port 27017 --username admin --password admin --authenticationDatabase admin -db spotify --collection Spotifyv3 --file SpotifyDBSmall.json
 ```
 ## Passo 3 - Scripts em Paralelo
 Os scripts utilizados para alocar as máquinas em paralelo (via ssh) e executar as consultas em fragmento podem ser encontradas no link abaixo:
